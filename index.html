@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Glosario en la Lengua Yokot'an">
+    <meta name="theme-color" content="#667eea">
+    <title>🗣️ Glosario Yokot'an</title>
+    <link rel="manifest" href="manifest.json">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 10px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 { font-size: 28px; margin-bottom: 5px; }
+        .header p { font-size: 14px; opacity: 0.9; }
+        .search-box { padding: 15px; border-bottom: 2px solid #f0f0f0; }
+        .search-box input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        .search-box input:focus {
+            outline: none;
+            border-color: #764ba2;
+        }
+        .filters {
+            display: flex;
+            gap: 10px;
+            padding: 15px;
+            overflow-x: auto;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .filter-btn {
+            padding: 8px 15px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 20px;
+            cursor: pointer;
+            white-space: nowrap;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .filter-btn.active {
+            background: #667eea;
+            color: white;
+        }
+        .results {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+        }
+        .word-card {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+        }
+        .word-card h3 { color: #667eea; font-size: 20px; margin-bottom: 8px; }
+        .pronunciation { color: #764ba2; font-style: italic; font-size: 14px; }
+        .word-card .category {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-top: 8px;
+        }
+        .no-results { text-align: center; color: #999; padding: 40px 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🗣️ Glosario Yokot'an</h1>
+            <p>Explora las palabras de nuestros ancestros</p>
+        </div>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="🔍 Busca una palabra...">
+        </div>
+        <div class="filters">
+            <button class="filter-btn active" data-category="all">Todas</button>
+            <button class="filter-btn" data-category="sustantivo">Sustantivos</button>
+            <button class="filter-btn" data-category="verbo">Verbos</button>
+            <button class="filter-btn" data-category="adjetivo">Adjetivos</button>
+        </div>
+        <div class="results" id="results">
+            <div class="no-results"><p>📚 Comienza a buscar</p></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
